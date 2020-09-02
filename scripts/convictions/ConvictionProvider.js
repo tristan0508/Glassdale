@@ -8,3 +8,4 @@ export const getConviction = async() => {
     conviction = response;
     return conviction;
 };
+

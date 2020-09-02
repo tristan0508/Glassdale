@@ -8,14 +8,21 @@ h2 {
     font-size: 1.2em;
     text-align: center;
 }
-
-.filters-crime {
-    margin: 25px;
+.filters {
+    display: flex;
+    
 }
 
 #crimeSelect {
     border: 3px solid black;
     width: auto;
+    margin: 25px;
+}
+
+#officerSelect {
+    border: 3px solid black;
+    width: auto;
+    margin: 25px;
 }
 .criminalsContainer {
     display: grid;

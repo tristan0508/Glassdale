@@ -2,6 +2,7 @@ import {useConviction, getConviction} from './ConvictionProvider.js';
 const convictionElement = document.querySelector('.filters-crime');
 const eventHub = document.querySelector('.container')
 
+//////////////////////////////////////////////
 
 eventHub.addEventListener("change", event => {
     if (event.target.id === "crimeSelect") {
@@ -11,9 +12,9 @@ eventHub.addEventListener("change", event => {
             }
         })
     eventHub.dispatchEvent(customEvent)
-    }
-})
-
+    };
+});
+/////////////////////////////////////////////
 
 const render = convictionsCollection => {
     convictionElement.innerHTML = `
@@ -26,13 +27,13 @@ const render = convictionsCollection => {
             }
         </select>
     `
-}
-
+};
 
 export const ConvictionSelect = () => {
     getConviction()
         .then(() => {
             const convictions = useConviction()
             render(convictions)
-        })
-}
+        });
+};
+///////////////////////////////////////////////

@@ -2,9 +2,10 @@ import {getCriminals, criminalReturn} from './CriminalProvider.js';
 import {criminalHTML} from './Criminals.js';
 const criminalElement = document.querySelector('.criminalsContainer');
 const eventHub = document.querySelector(".container");
-    
+
+/////////////////////////////////////////////
+            
 eventHub.addEventListener('crimeChosen', event => {
-        
     if ("crimeThatWasChosen" in event.detail) {
         const criminalSlice = criminalReturn();
        const matchingCriminals = criminalSlice.filter(criminal => {
@@ -13,6 +14,18 @@ eventHub.addEventListener('crimeChosen', event => {
         criminalRender(matchingCriminals);
     }
 });
+////////////////////////////////////////////
+
+eventHub.addEventListener('officerChosen', event => {
+    if ("officerThatWasChosen" in event.detail) {
+        const criminalSlice = criminalReturn();
+       const matchingCriminals = criminalSlice.filter(criminal => {
+           return criminal.arrestingOfficer === event.detail.officerThatWasChosen
+        })
+        criminalRender(matchingCriminals);
+    }
+});
+///////////////////////////////////////////
 
 export const criminalList = () => {
     getCriminals()
@@ -28,3 +41,4 @@ const criminalRender = (generalArray) => {
     }) 
  criminalElement.innerHTML = criminalMap.join("");
 };
+//////////////////////////////////////////

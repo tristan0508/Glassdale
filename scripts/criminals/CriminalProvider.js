@@ -1,5 +1,7 @@
 let criminals = [];
 
+///////////////////////////////////////////////
+
 export const criminalReturn = () => criminals.slice();
 
 export const getCriminals = async() => {
@@ -8,3 +10,4 @@ export const getCriminals = async() => {
     criminals = response;
     return criminals;
 };
+//////////////////////////////////////////////

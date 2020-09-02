@@ -1,5 +1,7 @@
 let conviction;
 
+//////////////////////////////////////////////
+
 export const useConviction = () => conviction.slice();
 
 export const getConviction = async() => {
@@ -8,4 +10,5 @@ export const getConviction = async() => {
     conviction = response;
     return conviction;
 };
+//////////////////////////////////////////////
 

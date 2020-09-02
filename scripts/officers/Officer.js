@@ -4,4 +4,4 @@ export const OfficerHTML = (officerObj) => {
             <h2>Name: ${officerObj.name}</h2>
         </section>
     `
-}
+};

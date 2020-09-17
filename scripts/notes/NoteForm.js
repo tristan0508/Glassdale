@@ -16,7 +16,7 @@ eventHub.addEventListener('click', clickEvent => {
         if(noteCriminal.value !== "0"){
         const newNote = {
             noteText: noteContent.value,
-            suspect: noteCriminal.value,
+            suspectId: parseInt(noteCriminal.value),
             date: Date.now()
         }
 
@@ -36,7 +36,7 @@ const render = (criminalArray) => {
             <option value="0">Please select a criminal...</option>
             ${
                 criminalArray.map(criminalObj => {
-                    return `<option value="${criminalObj.name}">${criminalObj.name}</option>`
+                    return `<option value="${criminalObj.id}">${criminalObj.name}</option>`
                 })
             }
         </select>

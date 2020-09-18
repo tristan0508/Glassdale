@@ -8,6 +8,7 @@ const eventHub = document.querySelector("main");
 
 
 eventHub.addEventListener('click', clickEvent => {
+    clickEvent.preventDefault()
     if(clickEvent.target.id === "saveNote") {
 
         const noteContent = document.querySelector("#noteForm--text")
@@ -20,7 +21,10 @@ eventHub.addEventListener('click', clickEvent => {
             date: Date.now()
         }
 
-        saveNote(newNote);
+        saveNote(newNote)
+        .then(() => {
+            noteContent.value = "";
+        })
     }else {
         window.alert("Choose a Suspect");
     }
@@ -40,7 +44,7 @@ const render = (criminalArray) => {
                 })
             }
         </select>
-        <button id="saveNote">Save Note</button>
+        <button type="button" id="saveNote">Save Note</button>
     `
 }
         

@@ -5,5 +5,6 @@ export const htmlNotes = (noteObject) => {
             <div class="note--title">Suspect: ${ noteObject.suspectObj.name }</div>
             <div class="note--content">Note: ${ noteObject.noteText }</div>
         </section>
+        <button type="button" id="deleteNote--${noteObject.id}">Delete</button>
     `
 }

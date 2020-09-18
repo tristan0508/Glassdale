@@ -6,14 +6,15 @@ const witnessButton = document.querySelector(".witnessBtn");
 const criminalH2 = document.querySelector(".criminalsH2");
 
 
-export const witnessRender = witnessButton.addEventListener("click", () => {
+export const witnessRender = () => {
+    witnessButton.addEventListener("click", () => {
     Witnesses();
 
 criminalH2.addEventListener("click", () => {
     CriminalReturn();
     })
 })
-
+}
 
 const Witnesses = () => {
     getWitnesses()
